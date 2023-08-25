@@ -1,6 +1,7 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 import { Component } from 'react';
+// import PropTypes from 'prop-types';
 import { FormInput, Input } from './Form.styled';
 
 export class Form extends Component {

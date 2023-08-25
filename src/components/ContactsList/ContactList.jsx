@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { List, ListItem, Text, ButtonDelete } from './ContactList.styled';
 
 export const ContactList = ({ dataRender, onClickDelete }) => {
@@ -19,4 +20,8 @@ export const ContactList = ({ dataRender, onClickDelete }) => {
       })}
     </List>
   );
+};
+ContactList.propTypes = {
+  dataRender: PropTypes.array.isRequired,
+  onClickDelete: PropTypes.func,
 };

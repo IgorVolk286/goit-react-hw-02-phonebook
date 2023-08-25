@@ -1,5 +1,6 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 import { LabelFilterContact, InputFilter } from './FilterContacts.styled';
 
 export const FilterCon = ({ filter, contFilter }) => {
@@ -14,4 +15,8 @@ export const FilterCon = ({ filter, contFilter }) => {
       />
     </LabelFilterContact>
   );
+};
+FilterCon.propTypes = {
+  filter: PropTypes.string.isRequired,
+  contFilter: PropTypes.func,
 };
