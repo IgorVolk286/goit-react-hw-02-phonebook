@@ -11,7 +11,7 @@ import {
 } from './Form.styled';
 import * as Yup from 'yup';
 
-import { string, number } from 'yup';
+// import { string, number } from 'yup';
 
 let FormikSchema = Yup.object().shape({
   name: Yup.string()
