@@ -4,7 +4,9 @@ import { Form } from './form/form';
 import { nanoid } from 'nanoid';
 import { FilterCon } from './FilterContacts/FilterContacts';
 import { ContactList } from './ContactsList/ContactList';
-
+import { Layout } from './Layout';
+import { Title, TitleBook } from './App.styled';
+import { GlobalStyle } from './GlobalStyled';
 const contactList = [
   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
   { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
@@ -52,22 +54,20 @@ export class App extends Component {
     );
 
     return (
-      <div>
-        <h1>PHONEBOOK</h1>
-
+      <Layout>
+        <Title>PHONEBOOK</Title>
         <Form
           // onSubmit={this.formSubmitGetData}
           addContacts={this.addContacts}
         />
-
-        <h2>CONTACTS</h2>
-
+        <TitleBook>CONTACTS</TitleBook>
         <FilterCon filter={this.state.filter} contFilter={this.filtered} />
         <ContactList
           dataRender={visibleContact}
           onClickDelete={this.deleteContact}
         />
-      </div>
+        <GlobalStyle />
+      </Layout>
     );
   }
 }
