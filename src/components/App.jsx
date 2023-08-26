@@ -7,6 +7,8 @@ import { ContactList } from './ContactsList/ContactList';
 import { Layout } from './Layout';
 import { Title, TitleBook } from './App.styled';
 import { GlobalStyle } from './GlobalStyled';
+import { FormFormikF } from './form/FormFormik';
+
 const contactList = [
   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
   { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
@@ -56,10 +58,11 @@ export class App extends Component {
     return (
       <Layout>
         <Title>PHONEBOOK</Title>
-        <Form
+        {/* <Form
           // onSubmit={this.formSubmitGetData}
           addContacts={this.addContacts}
-        />
+        /> */}
+        <FormFormikF addContacts={this.addContacts} />
         <TitleBook>CONTACTS</TitleBook>
         <FilterCon filter={this.state.filter} contFilter={this.filtered} />
         <ContactList

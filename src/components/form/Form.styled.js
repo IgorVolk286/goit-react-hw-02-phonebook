@@ -1,22 +1,30 @@
 import { styled } from 'styled-components';
+// import { Form } from './FormFormik';
 
-export const FormInput = styled.form`
-  width: 1000px;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
-`;
+// export const FormInput = styled(Form)`
+//   width: 1000px;
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin-left: auto;
+//   margin-right: auto;
+// `;
+// export const FormInput = styled.form`
+//   width: 1000px;
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin-left: auto;
+//   margin-right: auto;
+// `;
 
-export const Input = styled.input`
-  width: 1000px;
-  height: 50px;
-  padding: 8px;
-  font-size: 24px;
-  border-radius: 4px;
-  border: 3px solid #111111;
-  margin-bottom: 20px;
-`;
+// export const Input = styled.input`
+//   width: 1000px;
+//   height: 50px;
+//   padding: 8px;
+//   font-size: 24px;
+//   border-radius: 4px;
+//   border: 3px solid #111111;
+//   margin-bottom: 20px;
+// `;
 export const TitleInput = styled.label`
   font-size: 24px;
   font-weight: 400;
