@@ -7,7 +7,7 @@ import { ContactList } from './ContactsList/ContactList';
 import { Layout } from './Layout';
 import { Title, TitleBook } from './App.styled';
 import { GlobalStyle } from './GlobalStyled';
-import { FormFormikF } from './form/FormFormik';
+import { FormFormik } from './form/FormFormik';
 
 const contactList = [
   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -27,13 +27,14 @@ export class App extends Component {
     console.log(this.state.filter);
   };
 
-  addContacts = data => {
+  addContacts = formValues => {
+    const { name, number } = formValues;
     const contact = {
       id: nanoid(),
-      name: data.name,
-      number: data.number,
+      name,
+      number,
     };
-    console.log(contact);
+
     if (this.state.contacts.some(cont => cont.name === contact.name)) {
       return alert(`${contact.name} is already in contacts`);
     } else {
@@ -58,13 +59,13 @@ export class App extends Component {
     return (
       <Layout>
         <Title>PHONEBOOK</Title>
-        {/* <Form
-          // onSubmit={this.formSubmitGetData}
-          addContacts={this.addContacts}
-        /> */}
-        <FormFormikF addContacts={this.addContacts} />
+
+        <FormFormik addContacts={this.addContacts} />
+
         <TitleBook>CONTACTS</TitleBook>
+
         <FilterCon filter={this.state.filter} contFilter={this.filtered} />
+
         <ContactList
           dataRender={visibleContact}
           onClickDelete={this.deleteContact}

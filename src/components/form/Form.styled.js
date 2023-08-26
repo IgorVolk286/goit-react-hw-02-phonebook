@@ -1,36 +1,31 @@
 import { styled } from 'styled-components';
-// import { Form } from './FormFormik';
+import { Form, Field, ErrorMessage } from 'formik';
 
-// export const FormInput = styled(Form)`
-//   width: 1000px;
-//   display: flex;
-//   flex-wrap: wrap;
-//   margin-left: auto;
-//   margin-right: auto;
-// `;
-// export const FormInput = styled.form`
-//   width: 1000px;
-//   display: flex;
-//   flex-wrap: wrap;
-//   margin-left: auto;
-//   margin-right: auto;
-// `;
+export const FormInput = styled(Form)`
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
-// export const Input = styled.input`
-//   width: 1000px;
-//   height: 50px;
-//   padding: 8px;
-//   font-size: 24px;
-//   border-radius: 4px;
-//   border: 3px solid #111111;
-//   margin-bottom: 20px;
-// `;
+export const ImputField = styled(Field)`
+  width: 1000px;
+  height: 50px;
+  padding: 8px;
+  font-size: 24px;
+  border-radius: 4px;
+  border: 3px solid #111111;
+  margin-bottom: 20px;
+`;
+
 export const TitleInput = styled.label`
   font-size: 24px;
   font-weight: 400;
   margin-bottom: 20px;
 `;
 export const AddButton = styled.button`
+  width: 250px;
   padding: 10px;
   background-color: #e0e0e0;
   border-radius: 3px;
@@ -41,4 +36,9 @@ export const AddButton = styled.button`
     background-color: #99ff99;
     transform: scale(1.2);
   }
+`;
+export const Message = styled(ErrorMessage)`
+  font-size: 24px;
+  color: red;
+  font-weight: 400;
 `;

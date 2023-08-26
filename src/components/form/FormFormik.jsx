@@ -1,18 +1,38 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 // import PropTypes from 'prop-types';
-import { TitleInput, AddButton } from './Form.styled';
+import {
+  TitleInput,
+  AddButton,
+  FormInput,
+  ImputField,
+  Message,
+} from './Form.styled';
 import * as Yup from 'yup';
 
 import { string, number } from 'yup';
 
-const FormikSchema = Yup.object().shape({
-  name: Yup.string().max(20, 'Too Long!').required('Required'),
-  number: Yup.number().positive().min(6, 'Too Short!').required('Required'),
+let FormikSchema = Yup.object().shape({
+  name: Yup.string()
+    .matches(
+      /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
+      'Name may contain only letters'
+    )
+    .min(2, 'Too Choot!')
+    .max(20, 'Too Long!')
+    .required('Required'),
+
+  number: Yup.string()
+    .min(6, 'Too Short!')
+    .required('Required')
+    .matches(
+      /\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}/,
+      'Phone number may contain only digits'
+    ),
 });
 
-export const FormFormikF = ({ addContacts }) => {
+export const FormFormik = ({ addContacts }) => {
   return (
     <Formik
       initialValues={{ name: '', number: '' }}
@@ -22,25 +42,25 @@ export const FormFormikF = ({ addContacts }) => {
         actions.resetForm();
       }}
     >
-      <Form>
+      <FormInput>
         <TitleInput htmlFor={nanoid()}>NAME</TitleInput>
-        <Field
+        <ImputField
           id={nanoid()}
           type="text"
           name="name"
           placeholder="Enter Name your friend"
         />
-        <ErrorMessage name="name" component="span" />
+        <Message name="name" component="span" />
         <TitleInput htmlFor={nanoid()}>NUMBER</TitleInput>
-        <Field
+        <ImputField
           id={nanoid()}
           type="tel"
           name="number"
           placeholder="Enter Phone your friend"
         />
-        <ErrorMessage name="number" component="span" />
+        <Message name="number" component="span" />
         <AddButton type="submit">ADD CONTACT</AddButton>
-      </Form>
+      </FormInput>
     </Formik>
   );
 };
