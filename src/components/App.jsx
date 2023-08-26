@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
-import { Form } from './form/form';
+// import { Form } from './form/form';
 import { nanoid } from 'nanoid';
 import { FilterCon } from './FilterContacts/FilterContacts';
 import { ContactList } from './ContactsList/ContactList';
